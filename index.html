@@ -9,13 +9,26 @@
 <body>
 
 <nav class="navbar">
-  <div class="logo">NoirWeb</div>
+  <a href="#hero" class="logo">NoirWeb</a>
 
-  <ul class="nav-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+  <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul id="primary-navigation" class="nav-links">
+    <li class="nav-item"><a href="#hero"><span class="nav-index">01</span><span>Home</span></a></li>
+    <li class="nav-item"><a href="#services"><span class="nav-index">02</span><span>Services</span></a></li>
+    <li class="nav-item"><a href="#projects"><span class="nav-index">03</span><span class="desktop-label">Projects</span><span class="mobile-label">Selected Work</span></a></li>
+    <li class="nav-item"><a href="#contact"><span class="nav-index">04</span><span>Contact</span></a></li>
+    <li class="nav-cta">
+      <span>Have a project in mind?</span>
+      <a href="mailto:noirwebstudio@gmail.com?subject=Project%20Inquiry">Start Your Project <span aria-hidden="true">→</span></a>
+    </li>
+    <li class="nav-email">
+      <span>New Business</span>
+      <a href="mailto:noirwebstudio@gmail.com">noirwebstudio@gmail.com</a>
+    </li>
   </ul>
 </nav>
 
@@ -170,6 +183,7 @@
     Premium web design for modern brands.
   </p>
 </footer>
-  
+
+  <script src="./script.js"></script>
   </body>
 </html>
