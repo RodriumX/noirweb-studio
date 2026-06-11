@@ -484,6 +484,104 @@ h1 {
   text-transform: uppercase;
 }
 
+/* PROCESS */
+
+.process {
+  padding: 140px 56px;
+  background: #050505;
+}
+
+.process-intro {
+  max-width: 840px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.process-intro p {
+  max-width: 680px;
+  margin: 22px auto 0;
+  color: #9f9f9f;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.process-grid,
+.partnership {
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 80px;
+  row-gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  padding: 34px 0 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.process-number,
+.partnership-label {
+  color: #d8c7aa;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.process-step h3 {
+  margin: 0 0 16px;
+  font-size: 26px;
+  letter-spacing: -1px;
+}
+
+.process-step p {
+  grid-column: 2;
+  margin: 0;
+  color: #9f9f9f;
+  line-height: 1.7;
+}
+
+.partnership {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.65fr) minmax(0, 1.35fr);
+  gap: 80px;
+  padding-top: 64px;
+}
+
+.partnership-label {
+  padding-top: 4px;
+}
+
+.partnership-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 48px;
+  margin: 0;
+}
+
+.partnership-list div {
+  padding: 0 0 24px;
+}
+
+.partnership-list dt {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.partnership-list dd {
+  margin: 0;
+  color: #9f9f9f;
+  line-height: 1.65;
+}
+
 /* CONTACT PREMIUM */
 
 .contact-premium {
@@ -893,6 +991,41 @@ h1 {
   .case-meta div {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .process {
+    padding: 90px 24px;
+  }
+
+  .process-intro p {
+    font-size: 16px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step {
+    grid-template-columns: 38px 1fr;
+    padding: 28px 0 32px;
+  }
+
+  .process-step h3 {
+    font-size: 23px;
+  }
+
+  .partnership {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 50px;
+  }
+
+  .partnership-list {
+    grid-template-columns: 1fr;
+  }
+
+  .partnership-list div {
+    padding-bottom: 22px;
   }
 
   .contact-premium {
