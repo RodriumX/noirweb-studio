@@ -1,0 +1,1379 @@
+:root {
+  --navy: #07111f;
+  --navy-soft: #0e1b2c;
+  --ivory: #f5efe3;
+  --ivory-muted: #ddd2bf;
+  --gold: #c8a45d;
+  --gold-deep: #9f7b36;
+  --ink: #18202c;
+  --muted: #718093;
+  --line: rgba(200, 164, 93, 0.28);
+  --line-soft: rgba(245, 239, 227, 0.12);
+  --ink-line: rgba(24, 32, 44, 0.14);
+  --ink-line-soft: rgba(24, 32, 44, 0.1);
+  --gold-line-soft: rgba(200, 164, 93, 0.22);
+  --gold-line-medium: rgba(200, 164, 93, 0.36);
+  --gold-line-muted: rgba(200, 164, 93, 0.38);
+  --gold-line-strong: rgba(200, 164, 93, 0.72);
+  --ivory-line-muted: rgba(245, 239, 227, 0.1);
+  --ink-line-muted: rgba(24, 32, 44, 0.12);
+  --max-width: 1180px;
+  --nav-height: 90px;
+  --anchor-offset: var(--nav-height);
+  --brand-mark-size: 64px;
+  --section-padding: clamp(56px, 8vh, 84px);
+  --measure: 760px;
+  --motion: 480ms cubic-bezier(0.22, 1, 0.36, 1);
+  --radius: 2px;
+  --space-2xs: 8px;
+  --space-xs: 14px;
+  --space-sm: 22px;
+  --space-md: 28px;
+  --space-lg: 34px;
+  --space-xl: 42px;
+  --space-2xl: 56px;
+  --space-3xl: 72px;
+  --space-card: var(--space-md);
+  --space-panel: var(--space-lg);
+  --shadow-soft: 0 16px 34px rgba(0, 0, 0, 0.18);
+  --shadow-deep: 0 18px 42px rgba(0, 0, 0, 0.24);
+  --shadow-ink-soft: 0 18px 34px rgba(24, 32, 44, 0.08);
+  --monogram-faint: rgba(200, 164, 93, 0.08);
+  --monogram-soft: rgba(200, 164, 93, 0.42);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--navy);
+  color: var(--ivory);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.72;
+  font-variant-numeric: lining-nums;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.04;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(3, 14, 24, 0.96);
+  border-bottom: 1px solid var(--gold-line-soft);
+  backdrop-filter: blur(18px);
+  transition: background var(--motion), border-color var(--motion), box-shadow var(--motion);
+}
+
+.site-header.is-scrolled {
+  background: rgba(3, 14, 24, 0.98);
+  border-bottom-color: var(--gold-line-medium);
+  box-shadow: var(--shadow-deep);
+}
+
+.navbar {
+  width: min(100% - 160px, 1514px);
+  min-height: var(--nav-height);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.15;
+  font-size: 1.02rem;
+}
+
+.brand-mark {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold-line-strong);
+  border-radius: var(--radius);
+  color: var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1rem;
+  line-height: 1;
+  background: rgba(200, 164, 93, 0.06);
+}
+
+.navbar .brand {
+  gap: 20px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.68rem;
+}
+
+.navbar .brand-mark {
+  width: var(--brand-mark-size);
+  height: var(--brand-mark-size);
+  font-size: 1.34rem;
+}
+
+.brand-mark::before,
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  pointer-events: none;
+}
+
+.brand-mark::before {
+  border-top: 1px solid rgba(200, 164, 93, 0.38);
+  border-bottom: 1px solid rgba(200, 164, 93, 0.38);
+}
+
+.brand-mark::after {
+  border-left: 1px solid rgba(200, 164, 93, 0.24);
+  border-right: 1px solid rgba(200, 164, 93, 0.24);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: rgba(245, 239, 227, 0.82);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 12px 10px;
+  color: rgba(245, 239, 227, 0.78);
+  transition: color var(--motion), background var(--motion);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0;
+  transform: scaleX(0.72);
+  transform-origin: center;
+  transition: opacity var(--motion), transform var(--motion);
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-links a:hover::after {
+  opacity: 0.82;
+  transform: scaleX(1);
+}
+
+.nav-cta {
+  margin-left: 16px;
+  padding: 15px 22px;
+  border: 1px solid var(--gold-line-strong);
+  border-radius: var(--radius);
+  color: var(--gold);
+  background: rgba(200, 164, 93, 0.06);
+}
+
+.nav-links .nav-cta:hover {
+  background: rgba(200, 164, 93, 0.12);
+}
+
+.nav-links .nav-cta::after {
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid rgba(245, 239, 227, 0.22);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  margin: 5px 0;
+  background: var(--ivory);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: calc(100vh - var(--nav-height));
+  margin: 0;
+  padding: clamp(42px, 7vh, 92px) max(80px, calc((100% - 1514px) / 2)) clamp(48px, 7vh, 84px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--navy);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(7, 17, 30, 0.98) 0%,
+      rgba(7, 17, 30, 0.9) 30%,
+      rgba(7, 17, 30, 0.55) 53%,
+      rgba(7, 17, 30, 0.18) 78%,
+      rgba(7, 17, 30, 0.06) 100%
+    ),
+    url("assets/images/hero-law-firm.jpg");
+  background-size: cover, 90% auto;
+  background-position: center, right 46%;
+  background-repeat: no-repeat, no-repeat;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 17, 30, 0.12) 0%,
+    rgba(7, 17, 30, 0.05) 45%,
+    rgba(7, 17, 30, 0.75) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 680px);
+  max-width: 680px;
+  padding-top: 0;
+  transform: none;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.eyebrow::after {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.42;
+}
+
+.hero h1 {
+  font-size: clamp(4.15rem, 5.32vw, 5.55rem);
+  line-height: 0.92;
+  max-width: 670px;
+}
+
+.hero-copy {
+  max-width: 650px;
+  margin-top: 22px;
+  color: rgba(245, 239, 227, 0.76);
+  font-size: clamp(1.05rem, 1.2vw, 1.18rem);
+  line-height: 1.64;
+}
+
+.hero-mobile-image {
+  display: none;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: 28px;
+}
+
+.hero .button {
+  min-height: 54px;
+  padding: 15px 26px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 22px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.88rem;
+  line-height: 1.15;
+  transition: transform var(--motion), box-shadow var(--motion), background var(--motion), border-color var(--motion), color var(--motion);
+}
+
+.button-primary {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.button-secondary {
+  border-color: rgba(245, 239, 227, 0.28);
+  color: var(--ivory);
+}
+
+.button-secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(200, 164, 93, 0.64);
+  color: var(--gold);
+}
+
+.section {
+  position: relative;
+  min-height: calc(100svh - var(--nav-height));
+  padding: var(--section-padding) max(20px, calc((100% - var(--max-width)) / 2));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid var(--line-soft);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: max(20px, calc((100% - var(--max-width)) / 2));
+  width: min(160px, calc(100% - 40px));
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.72;
+}
+
+.section-ivory {
+  background: var(--ivory);
+  color: var(--ink);
+  border-top-color: var(--ink-line);
+}
+
+.section-ivory::before {
+  background: var(--gold-deep);
+}
+
+.section-heading {
+  position: relative;
+  width: 100%;
+  max-width: var(--measure);
+  margin-bottom: 48px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid currentColor;
+  border-color: var(--gold-line-muted);
+}
+
+.section-heading::before {
+  content: "S&V";
+  position: absolute;
+  right: 0;
+  bottom: 26px;
+  color: var(--monogram-soft);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+
+.section-ivory .section-heading::before {
+  color: rgba(159, 123, 54, 0.48);
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 20px;
+}
+
+.section h2,
+.consultation h2 {
+  font-size: clamp(2.45rem, 4.4vw, 4.45rem);
+  line-height: 1.02;
+}
+
+#practice {
+  min-height: calc(100svh - var(--nav-height));
+  padding-top: clamp(56px, 7vh, 76px);
+  padding-bottom: clamp(60px, 8vh, 84px);
+  justify-content: center;
+}
+
+#practice .section-heading {
+  margin-bottom: 30px;
+}
+
+#practice .practice-card {
+  min-height: 210px;
+}
+
+#practice .grid {
+  gap: 18px;
+}
+
+#practice .practice-card span {
+  font-size: clamp(1rem, 1.5vw, 1.28rem);
+  line-height: 1;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
+}
+
+#practice .practice-card h3 {
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+#practice .practice-card p {
+  margin-top: 12px;
+}
+
+#about {
+  min-height: calc(100vh - var(--nav-height));
+  padding-top: clamp(44px, 6vh, 64px);
+  padding-bottom: clamp(44px, 6vh, 64px);
+  align-content: center;
+  align-items: center;
+}
+
+#attorneys {
+  min-height: calc(100svh - var(--nav-height));
+  padding-top: clamp(38px, 5vh, 52px);
+  padding-bottom: clamp(42px, 6vh, 62px);
+  justify-content: flex-start;
+}
+
+#attorneys .section-heading {
+  margin-bottom: 10px;
+}
+
+#attorneys .grid {
+  gap: var(--space-lg);
+  transform: translateY(-12px);
+}
+
+#attorneys .attorney-card {
+  min-height: 0;
+  padding: clamp(16px, 1.8vw, 22px);
+}
+
+#attorneys .attorney-card::before {
+  left: clamp(16px, 1.8vw, 22px);
+  right: clamp(16px, 1.8vw, 22px);
+}
+
+#attorneys .portrait {
+  width: min(100%, clamp(228px, 21vw, 264px));
+  aspect-ratio: 4 / 5;
+  align-self: center;
+  margin-bottom: 16px;
+  font-size: clamp(3.2rem, 5vw, 4.8rem);
+}
+
+#attorneys .portrait img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform var(--motion);
+}
+
+#attorneys .attorney-card h3 {
+  margin-top: 0;
+  padding-top: 14px;
+  font-size: clamp(1.8rem, 2.4vw, 2.28rem);
+  line-height: 1.05;
+}
+
+#attorneys .attorney-card p {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.34;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#results {
+  min-height: calc(100svh - var(--nav-height));
+  padding-top: clamp(72px, 10vh, 104px);
+  padding-bottom: clamp(60px, 8vh, 88px);
+}
+
+#results .section-heading {
+  margin-bottom: 72px;
+}
+
+#results .stats div {
+  padding-top: clamp(54px, 7vh, 76px);
+  padding-bottom: clamp(46px, 6vh, 64px);
+}
+
+#testimonials {
+  min-height: calc(100svh - var(--nav-height));
+  padding-top: clamp(58px, 7vh, 82px);
+  padding-bottom: clamp(76px, 10vh, 112px);
+}
+
+#testimonials .section-heading {
+  margin-bottom: 24px;
+}
+
+#testimonials .testimonial-row {
+  gap: clamp(42px, 6vw, 72px);
+  transform: translateY(-18px);
+}
+
+#testimonials blockquote {
+  min-height: 100%;
+  padding-top: 30px;
+  padding-bottom: 44px;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-sm);
+  align-items: stretch;
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.practice-card,
+.attorney-card {
+  position: relative;
+  min-height: 230px;
+  padding: var(--space-card);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 1px solid var(--ink-line-muted);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.34);
+  transition: transform var(--motion), border-color var(--motion), box-shadow var(--motion), background var(--motion);
+}
+
+.practice-card::before,
+.attorney-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 28px;
+  right: 28px;
+  height: 1px;
+  background: var(--gold-deep);
+  opacity: 0.46;
+  transition: opacity var(--motion), left var(--motion), right var(--motion);
+}
+
+.practice-card span {
+  color: var(--gold-deep);
+  font-weight: 800;
+  font-size: 0.76rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.72;
+  transition: opacity var(--motion), color var(--motion);
+}
+
+.practice-card h3,
+.attorney-card h3 {
+  width: 100%;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink-line-soft);
+  font-size: clamp(1.45rem, 2vw, 1.72rem);
+  line-height: 1.12;
+  transition: color var(--motion);
+}
+
+.practice-card p,
+.attorney-card p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.practice-card:hover,
+.attorney-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(159, 123, 54, 0.28);
+  box-shadow: 0 16px 28px rgba(24, 32, 44, 0.1);
+}
+
+.practice-card:hover::before,
+.attorney-card:hover::before {
+  left: 22px;
+  right: 22px;
+  opacity: 0.9;
+}
+
+.practice-card:hover span {
+  opacity: 1;
+}
+
+.attorney-card:hover h3 {
+  color: var(--gold-deep);
+}
+
+.split {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.95fr 1fr;
+  align-items: center;
+  gap: var(--space-3xl);
+  border-top: 1px solid var(--ivory-line-muted);
+  border-bottom: 1px solid var(--ivory-line-muted);
+}
+
+.split::after {
+  content: "";
+  position: absolute;
+  top: clamp(96px, 13vh, 132px);
+  bottom: clamp(96px, 13vh, 132px);
+  left: 50%;
+  width: 1px;
+  background: var(--line);
+}
+
+.text-column {
+  display: grid;
+  gap: var(--space-sm);
+  color: rgba(245, 239, 227, 0.72);
+  font-size: clamp(1.04rem, 1.2vw, 1.16rem);
+  line-height: 1.82;
+}
+
+.portrait {
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1.45 / 1;
+  display: grid;
+  place-items: center;
+  background: var(--navy);
+  color: var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 3rem;
+  line-height: 1;
+  border-radius: var(--radius);
+  transition: transform var(--motion), color var(--motion);
+}
+
+#attorneys .attorney-card:hover .portrait {
+  transform: none;
+}
+
+#attorneys .attorney-card:hover .portrait img {
+  transform: scale(1.03);
+}
+
+.results {
+  background: var(--navy-soft);
+}
+
+.stats {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  background: transparent;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.stats::before {
+  content: "S&V";
+  position: absolute;
+  top: -28px;
+  right: 0;
+  color: rgba(200, 164, 93, 0.36);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+
+.stats div {
+  position: relative;
+  padding: 48px 40px;
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+  transition: transform var(--motion), background var(--motion), box-shadow var(--motion);
+}
+
+.stats div + div {
+  border-left: 1px solid var(--line);
+}
+
+.stats div::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: 40px;
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.58;
+  transition: opacity var(--motion), width var(--motion);
+}
+
+.stats strong {
+  display: block;
+  color: var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3.9rem, 6.9vw, 6.45rem);
+  line-height: 0.95;
+  font-variant-numeric: lining-nums;
+  transition: transform var(--motion), color var(--motion);
+}
+
+.stats span {
+  display: block;
+  max-width: 230px;
+  margin-top: 26px;
+  color: rgba(245, 239, 227, 0.72);
+  font-size: 0.96rem;
+  line-height: 1.55;
+  transition: color var(--motion);
+}
+
+.stats div:hover {
+  transform: translateY(-5px);
+  background: rgba(7, 17, 31, 0.16);
+  box-shadow: none;
+}
+
+.stats div:hover::before {
+  width: 72px;
+  opacity: 0.96;
+}
+
+.stats div:hover strong {
+  transform: translateY(-3px);
+}
+
+.stats div:hover span {
+  color: rgba(245, 239, 227, 0.84);
+}
+
+.testimonial-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 46px 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid var(--gold-line-muted);
+  border-left: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.65rem, 2.45vw, 2.28rem);
+  line-height: 1.32;
+  transition: transform var(--motion), border-color var(--motion), box-shadow var(--motion), background var(--motion);
+}
+
+blockquote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 88px;
+  height: 1px;
+  background: var(--gold-deep);
+  opacity: 0.7;
+  transition: opacity var(--motion), width var(--motion);
+}
+
+blockquote:hover {
+  transform: translateY(-5px);
+  border-top-color: var(--gold-deep);
+  background: transparent;
+  box-shadow: 0 18px 30px rgba(24, 32, 44, 0.08);
+}
+
+blockquote:hover::before {
+  width: 116px;
+  opacity: 0.9;
+}
+
+cite {
+  display: block;
+  margin-top: 44px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ink-line-soft);
+  color: var(--muted);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.94rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+}
+
+.consultation {
+  position: relative;
+  width: min(100% - 40px, var(--max-width));
+  margin: 0 auto;
+  min-height: calc(100svh - var(--nav-height));
+  padding: clamp(48px, 6vh, 70px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  align-items: center;
+  gap: clamp(44px, 7vw, 84px);
+  border-top: 1px solid var(--line-soft);
+}
+
+.consultation > div {
+  position: relative;
+}
+
+.consultation > div::before {
+  content: "S&V";
+  position: absolute;
+  top: -34px;
+  left: 0;
+  color: var(--monogram-soft);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+
+.consultation::before,
+.consultation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+}
+
+.consultation::before {
+  top: 0;
+  width: 160px;
+}
+
+.consultation::after {
+  bottom: 0;
+  width: 100%;
+  opacity: 0.32;
+}
+
+.consultation h2 {
+  max-width: 720px;
+}
+
+.consultation-copy {
+  max-width: 600px;
+  margin-top: 20px;
+  color: rgba(245, 239, 227, 0.72);
+  font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+  line-height: 1.72;
+}
+
+.consultation-action {
+  position: relative;
+  padding: 34px 0 34px 34px;
+  border-left: 1px solid var(--line);
+}
+
+.consultation-action::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: 72px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.72;
+  transform: translateX(-1px);
+}
+
+.consultation-action p {
+  max-width: 260px;
+  margin-bottom: 22px;
+  color: rgba(245, 239, 227, 0.72);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.consultation .button {
+  flex: 0 0 auto;
+  min-height: 56px;
+  margin-top: 0;
+  padding: 16px 30px;
+}
+
+.consultation .button-primary:hover {
+  background: #d6b36c;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.22);
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding: 36px max(20px, calc((100% - var(--max-width)) / 2)) 34px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  border-top: 1px solid var(--ivory-line-muted);
+  color: rgba(245, 239, 227, 0.7);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: max(20px, calc((100% - var(--max-width)) / 2));
+  width: 180px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.64;
+}
+
+.footer::after {
+  content: "S&V";
+  position: absolute;
+  right: max(20px, calc((100% - var(--max-width)) / 2));
+  bottom: -18px;
+  color: var(--monogram-faint);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3.6rem, 7vw, 6rem);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.footer .brand {
+  gap: 16px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.18rem;
+}
+
+.footer .brand-mark {
+  width: 50px;
+  height: 50px;
+  font-size: 1.08rem;
+}
+
+.footer p {
+  max-width: 460px;
+  margin-top: 14px;
+  font-size: 0.94rem;
+  line-height: 1.58;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: rgba(245, 239, 227, 0.76);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.footer-links a {
+  position: relative;
+  transition: color var(--motion);
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0;
+  transform: scaleX(0.72);
+  transform-origin: center;
+  transition: opacity var(--motion), transform var(--motion);
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-links a:hover::after {
+  opacity: 0.78;
+  transform: scaleX(1);
+}
+
+section,
+#hero,
+#practice,
+#about,
+#firm,
+#attorneys,
+#results,
+#testimonials,
+#consultation,
+#contact {
+  scroll-margin-top: var(--nav-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 860px) {
+  :root {
+    --nav-height: 72px;
+    --brand-mark-size: 46px;
+  }
+
+  .navbar {
+    width: min(100% - 40px, var(--max-width));
+    gap: var(--space-md);
+  }
+
+  .navbar .brand {
+    gap: var(--space-xs);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 1.02rem;
+  }
+
+  .navbar .brand-mark {
+    font-size: 1rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: var(--nav-height) 0 auto 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2xs);
+    font-size: 0.88rem;
+    padding: 26px 20px 32px;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(245, 239, 227, 0.12);
+  }
+
+  body.nav-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  .nav-links a::after {
+    left: 0;
+    right: 0;
+  }
+
+  .nav-cta {
+    width: auto;
+    margin-left: 0;
+    padding: 12px 18px;
+  }
+
+  .hero,
+  .split {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .split::after {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 42px 20px 46px;
+  }
+
+  .hero-content {
+    padding-top: 0;
+    transform: none;
+  }
+
+  .hero::before {
+    background-image: none;
+  }
+
+  .hero::after {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 17, 30, 0.08) 0%,
+      rgba(7, 17, 30, 0.18) 100%
+    );
+  }
+
+  .hero-mobile-image {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 26px;
+    display: block;
+    aspect-ratio: 5 / 4;
+    border: 1px solid rgba(200, 164, 93, 0.26);
+    border-radius: var(--radius);
+    background: var(--navy-soft);
+  }
+
+  .hero-mobile-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .hero-actions {
+    margin-top: 22px;
+  }
+
+  .grid.three,
+  .stats,
+  .testimonial-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stats div {
+    min-height: auto;
+  }
+
+  .stats div + div {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .section {
+    min-height: auto;
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  #practice,
+  #about,
+  #attorneys,
+  #results,
+  #testimonials {
+    min-height: auto;
+  }
+
+  #practice {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  #about,
+  #results,
+  #testimonials {
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+
+  #attorneys {
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+
+  #attorneys .grid,
+  #testimonials .testimonial-row {
+    gap: 26px;
+  }
+
+  #attorneys .attorney-card {
+    min-height: auto;
+  }
+
+  #attorneys .portrait {
+    width: 78%;
+    max-width: 300px;
+    aspect-ratio: 4 / 5;
+    margin-bottom: 24px;
+  }
+
+  .consultation,
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .consultation {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 64px;
+    padding-bottom: 72px;
+    gap: var(--space-lg);
+  }
+
+  .consultation-action {
+    width: 100%;
+    padding: 28px 0 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .consultation-action::before {
+    top: 0;
+    left: 0;
+    width: 96px;
+  }
+
+  .consultation .button {
+    margin-top: 0;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar,
+  .consultation {
+    width: min(100% - 28px, var(--max-width));
+  }
+
+  .hero h1 {
+    font-size: 2.55rem;
+    line-height: 1;
+  }
+
+  .section h2,
+  .consultation h2 {
+    font-size: 2.45rem;
+    line-height: 1.05;
+  }
+
+  .consultation-copy {
+    margin-top: 20px;
+  }
+
+  .section-heading::before,
+  .stats::before,
+  .consultation > div::before {
+    display: none;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+  }
+
+  .hero-actions,
+  .button {
+    width: 100%;
+  }
+
+  .practice-card,
+  .attorney-card,
+  .stats div {
+    padding: 24px;
+  }
+
+  blockquote {
+    padding: 38px 0 0 20px;
+  }
+
+  .practice-card::before,
+  .attorney-card::before {
+    left: 24px;
+    right: 24px;
+  }
+
+  blockquote::before {
+    width: 72px;
+  }
+}

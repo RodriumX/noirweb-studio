@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Meridian House is a luxury English countryside boutique hotel near London."
+    />
+    <title>The Meridian House | Countryside Boutique Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="#hero" aria-label="The Meridian House home">
+          <span>The Meridian</span>
+          <span>House</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="primary-menu">
+          <a href="#house">The House</a>
+          <a href="#rooms">Rooms</a>
+          <a href="#experiences">Experiences</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#location">Location</a>
+          <a class="nav-cta" href="#reserve">Reserve</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero" aria-label="The Meridian House">
+        <div class="hero-slideshow" aria-hidden="true">
+          <div
+            class="slide slide-manor is-active"
+            data-slide-title="Manor Exterior"
+          ></div>
+          <div
+            class="slide slide-library"
+            data-slide-title="Library Interior"
+          ></div>
+          <div
+            class="slide slide-suite"
+            data-slide-title="Luxury Suite"
+          ></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">English countryside, forty minutes from London</p>
+          <h1>The Meridian House</h1>
+          <p>
+            An intimate countryside estate where timeless British heritage
+            meets modern comfort.
+          </p>
+          <a class="button button-light" href="#reserve">Reserve a stay</a>
+        </div>
+        <div class="hero-indicators" aria-label="Hero slideshow">
+          <button
+            class="slide-indicator is-active"
+            type="button"
+            aria-label="Show Manor Exterior slide"
+          ></button>
+          <button
+            class="slide-indicator"
+            type="button"
+            aria-label="Show Library Interior slide"
+          ></button>
+          <button
+            class="slide-indicator"
+            type="button"
+            aria-label="Show Luxury Suite slide"
+          ></button>
+        </div>
+      </section>
+
+      <section class="section intro-section" id="house">
+        <div class="house-editorial">
+          <div class="house-image">
+            <img
+              src="assets/images/house-estate.jpg"
+              alt="Restored English countryside estate"
+            />
+          </div>
+          <div class="house-content">
+            <p class="section-kicker">The House</p>
+            <h2>A Historic Estate Reimagined</h2>
+            <p>
+              Once a private English manor, The Meridian House has been
+              carefully restored into an intimate countryside retreat where
+              heritage architecture, quiet gardens, and warm hospitality come
+              together.
+            </p>
+            <div class="house-stats" aria-label="The House highlights">
+              <div>
+                <strong>24</strong>
+                <span>Luxury Rooms</span>
+              </div>
+              <div>
+                <strong>18</strong>
+                <span>Acres of Gardens</span>
+              </div>
+              <div>
+                <strong>130</strong>
+                <span>Years of Heritage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="rooms">
+        <div class="section-heading">
+          <p class="section-kicker">ACCOMMODATIONS</p>
+          <h2>Rooms Designed For Restful Escapes</h2>
+          <p>
+            Each room at The Meridian House is shaped by heritage details, soft
+            textures, and views of the surrounding English countryside.
+          </p>
+        </div>
+        <div class="rooms-grid">
+          <article class="room-card">
+            <img src="assets/images/room-heritage.jpg" alt="Heritage Room" />
+            <div class="room-card-content">
+              <div>
+                <h3>Heritage Room</h3>
+                <p>
+                  Classic proportions, warm timber accents, and peaceful
+                  garden-facing windows.
+                </p>
+              </div>
+              <p class="room-price">From &pound;420 / night</p>
+            </div>
+          </article>
+          <article class="room-card">
+            <img src="assets/images/room-garden.jpg" alt="Garden Room" />
+            <div class="room-card-content">
+              <div>
+                <h3>Garden Room</h3>
+                <p>
+                  A serene room opening toward the estate gardens with layered
+                  natural textures.
+                </p>
+              </div>
+              <p class="room-price">From &pound;510 / night</p>
+            </div>
+          </article>
+          <article class="room-card">
+            <img src="assets/images/room-suite.jpg" alt="Meridian Suite" />
+            <div class="room-card-content">
+              <div>
+                <h3>Meridian Suite</h3>
+                <p>
+                  The house's signature suite with generous space, refined
+                  details, and countryside views.
+                </p>
+              </div>
+              <p class="room-price">From &pound;760 / night</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section warm-section" id="experiences">
+        <div class="experiences-editorial">
+          <div class="experiences-image">
+            <img
+              src="assets/images/experiences-dining.jpg"
+              alt="Curated countryside experience at The Meridian House"
+            />
+          </div>
+          <div class="experiences-content">
+            <div class="section-heading">
+              <p class="section-kicker">EXPERIENCES</p>
+              <h2>Curated Moments, Quietly Unforgettable</h2>
+              <p>
+                From afternoon tea to private garden walks, every experience is
+                designed to slow time and deepen your stay.
+              </p>
+            </div>
+            <div class="experience-list">
+              <article>
+                <span>01</span>
+                <div>
+                  <h3>Afternoon Tea</h3>
+                  <p>
+                    A refined British ritual served with seasonal pastries and
+                    estate-blended teas.
+                  </p>
+                </div>
+              </article>
+              <article>
+                <span>02</span>
+                <div>
+                  <h3>Fine Dining</h3>
+                  <p>
+                    Ingredient-led menus shaped by local farms, heritage
+                    recipes, and modern technique.
+                  </p>
+                </div>
+              </article>
+              <article>
+                <span>03</span>
+                <div>
+                  <h3>Private Gardens</h3>
+                  <p>
+                    Quiet paths, old stone walls, and secluded corners reserved
+                    for peaceful wandering.
+                  </p>
+                </div>
+              </article>
+              <article>
+                <span>04</span>
+                <div>
+                  <h3>Wellness Spa</h3>
+                  <p>
+                    Restorative treatments inspired by botanicals, warmth, and
+                    complete stillness.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials" id="testimonials">
+        <div class="section-heading">
+          <p class="section-kicker">GUEST EXPERIENCES</p>
+          <h2>What Our Guests Remember Most</h2>
+        </div>
+        <div class="testimonial-grid">
+          <figure class="testimonial-block">
+            <blockquote>
+              "The Meridian House feels less like a hotel and more like a
+              private countryside residence."
+            </blockquote>
+            <figcaption>Charlotte W.</figcaption>
+          </figure>
+          <figure class="testimonial-block">
+            <blockquote>
+              "The gardens, the quiet atmosphere, and the attention to detail
+              made every moment unforgettable."
+            </blockquote>
+            <figcaption>James H.</figcaption>
+          </figure>
+          <figure class="testimonial-block">
+            <blockquote>
+              "An exceptional retreat that perfectly balances heritage charm and
+              modern comfort."
+            </blockquote>
+            <figcaption>Eleanor S.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section gallery" id="gallery">
+        <div class="section-heading">
+          <p class="section-kicker">GALLERY</p>
+          <h2>A Glimpse Into Meridian House</h2>
+          <p>
+            Every corner of the estate is designed to inspire calm, comfort,
+            and quiet discovery.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-feature">
+            <img src="assets/images/cta-estate.jpg" alt="Manor Exterior" />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="assets/images/hero-library.jpg"
+              alt="Library Interior"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/room-suite.jpg" alt="Signature Suite" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/gallery-gardens.jpg" alt="Estate Gardens" />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="assets/images/experiences-dining.jpg"
+              alt="Fine Dining Experience"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section location" id="location">
+        <div class="location-content">
+          <p class="section-kicker">LOCATION</p>
+          <h2>Just Beyond London, A World Apart</h2>
+          <p>
+            Located in the English countryside less than an hour from London,
+            The Meridian House offers the perfect balance between accessibility
+            and complete escape. Surrounded by rolling landscapes, historic
+            villages, and quiet gardens, it feels worlds away from the pace of
+            the city.
+          </p>
+          <div class="travel-details" aria-label="Travel details">
+            <button
+              class="travel-item"
+              type="button"
+              data-image="assets/location-london-route.jpg"
+              data-position="50% center"
+            >
+              <span>London</span>
+              <strong>55 Minutes</strong>
+            </button>
+            <button
+              class="travel-item"
+              type="button"
+              data-image="assets/location-heathrow-route.jpg"
+              data-position="54% center"
+            >
+              <span>Heathrow Airport</span>
+              <strong>45 Minutes</strong>
+            </button>
+            <button
+              class="travel-item"
+              type="button"
+              data-image="assets/location-oxford-route.jpg"
+              data-position="48% center"
+            >
+              <span>Oxford</span>
+              <strong>35 Minutes</strong>
+            </button>
+          </div>
+        </div>
+        <div class="location-visual">
+          <img
+            class="location-image location-image-current"
+            src="assets/location-countryside.jpg"
+            alt="Countryside location near London"
+          />
+          <img
+            class="location-image location-image-next"
+            src="assets/location-countryside.jpg"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+
+      <section class="reservation-cta" id="reserve">
+        <div class="reservation-content">
+          <p class="section-kicker">RESERVATIONS</p>
+          <h2>Reserve Your Stay<br />At The Meridian House</h2>
+          <span class="reservation-divider" aria-hidden="true"></span>
+          <p>
+            We look forward to welcoming you to our historic estate. For the
+            best availability and exclusive offers, book directly with us.
+          </p>
+          <div class="booking-bar" aria-label="Reservation details">
+            <button class="booking-field" type="button">
+              <span>CHECK-IN</span>
+              <strong>Select date</strong>
+            </button>
+            <button class="booking-field" type="button">
+              <span>CHECK-OUT</span>
+              <strong>Select date</strong>
+            </button>
+            <button class="booking-field" type="button">
+              <span>GUESTS</span>
+              <strong>2 Guests</strong>
+            </button>
+            <a class="button booking-button" href="mailto:reservations@themeridianhouse.com">
+              CHECK AVAILABILITY
+            </a>
+          </div>
+          <p class="trust-note">Best Rate Guarantee</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand-block">
+          <a class="brand footer-brand" href="#hero">
+            <span>The Meridian</span>
+            <span>House</span>
+          </a>
+          <p>A Luxury Countryside Retreat Near London</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#hero">Home</a>
+          <a href="#house">The House</a>
+          <a href="#rooms">Accommodations</a>
+          <a href="#experiences">Experiences</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reserve">Contact</a>
+        </nav>
+        <div class="footer-contact">
+          <a href="mailto:reservations@themeridianhouse.com">
+            reservations@themeridianhouse.com
+          </a>
+          <a href="tel:+442055555555">+44 (0)20 5555 5555</a>
+          <p>Surrey, England</p>
+          <div class="footer-social">
+            <span>Instagram</span>
+            <span>Facebook</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Meridian House. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

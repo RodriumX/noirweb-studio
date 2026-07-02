@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Monolith Architects is a New York architecture studio designing timeless residential and commercial spaces through precision, materiality, and craftsmanship."
+    />
+    <title>Monolith Architects | Architecture Studio</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="./" aria-label="Monolith Architects home">
+          MONOLITH
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" data-nav-links>
+          <a href="#studio">Studio</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          <span class="established" aria-label="Established 2008">
+            EST. 2008
+          </span>
+        </div>
+      </nav>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <a href="#studio">Studio</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero reveal-section" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <div class="hero-meta">
+            <p class="hero-label">MONOLITH ARCHITECTS</p>
+            <p>NEW YORK, NY</p>
+            <p>EST. 2008</p>
+          </div>
+          <h1 class="hero-title" id="hero-title">
+            Architecture<br />
+            That Endures.
+          </h1>
+          <div class="hero-copy">
+            <p>
+              Designing timeless spaces through precision, materiality, and
+              thoughtful craftsmanship.
+            </p>
+            <a class="primary-button" href="#projects">View Projects</a>
+          </div>
+        </div>
+
+        <div
+          class="hero-image-placeholder"
+        >
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                assets/images/hero-monolith-768.webp 768w,
+                assets/images/hero-monolith.webp     1536w
+              "
+              sizes="100vw"
+            />
+            <img
+              src="assets/images/hero-monolith.jpg"
+              alt="Monolith Architects exterior architecture"
+              width="1536"
+              height="1024"
+              decoding="async"
+              fetchpriority="high"
+              data-parallax-image
+            />
+          </picture>
+        </div>
+
+        <p class="hero-attribution">
+          NOIRWEB PORTFOLIO PROJECT<br />
+          &copy; ALL RIGHTS RESERVED
+        </p>
+      </section>
+
+      <section
+        class="studio reveal-section"
+        id="studio"
+        data-nav-section="studio"
+        aria-labelledby="studio-title"
+      >
+        <p class="section-label">STUDIO</p>
+
+        <h2 class="studio-title" id="studio-title">
+          We believe architecture<br />
+          should outlive<br />
+          trends.
+        </h2>
+
+        <div
+          class="studio-image-placeholder"
+        >
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                assets/images/studio-detail-768.webp 768w,
+                assets/images/studio-detail.webp     1536w
+              "
+              sizes="100vw"
+            />
+            <img
+              src="assets/images/studio-detail.jpg"
+              alt="Architectural studio material detail"
+              width="1536"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+              data-parallax-image
+            />
+          </picture>
+        </div>
+
+        <p class="studio-copy">
+          Through careful material selection, proportion, and craftsmanship, we
+          create spaces designed to remain relevant for generations.
+        </p>
+      </section>
+
+      <section
+        class="selected-projects reveal-section"
+        id="projects"
+        data-nav-section="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="projects-intro">
+          <p class="section-label" id="projects-title">SELECTED PROJECTS</p>
+          <p>
+            A selection of residential and commercial projects shaped by
+            clarity, proportion, and materiality.
+          </p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-entry">
+            <div class="project-meta">
+              <h2>COASTAL RESIDENCE</h2>
+              <p>Monterey, USA</p>
+              <p>2024</p>
+            </div>
+
+            <div
+              class="project-image-placeholder"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    assets/images/coastal-residence-768.webp 768w,
+                    assets/images/coastal-residence.webp     1536w
+                  "
+                  sizes="100vw"
+                />
+                <img
+                  src="assets/images/coastal-residence.jpg"
+                  alt="Coastal Residence architecture project"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  data-parallax-image
+                />
+              </picture>
+            </div>
+          </article>
+
+          <article class="project-entry project-entry-right">
+            <div class="project-meta">
+              <h2>PAVILION ONE</h2>
+              <p>Vancouver, Canada</p>
+              <p>2023</p>
+            </div>
+
+            <div
+              class="project-image-placeholder"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    assets/images/pavilion-one-768.webp 768w,
+                    assets/images/pavilion-one.webp     1536w
+                  "
+                  sizes="100vw"
+                />
+                <img
+                  src="assets/images/pavilion-one.jpg"
+                  alt="Pavilion One architecture project"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  data-parallax-image
+                />
+              </picture>
+            </div>
+          </article>
+
+          <article class="project-entry">
+            <div class="project-meta">
+              <h2>RIDGE HOUSE</h2>
+              <p>California, USA</p>
+              <p>2025</p>
+            </div>
+
+            <div
+              class="project-image-placeholder"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    assets/images/project-03-768.webp 768w,
+                    assets/images/project-03.webp     1536w
+                  "
+                  sizes="100vw"
+                />
+                <img
+                  src="assets/images/project-03.jpg"
+                  alt="Ridge House architecture project"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  data-parallax-image
+                />
+              </picture>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="architectural-detail reveal-section"
+        data-nav-section="projects"
+        aria-labelledby="detail-title"
+      >
+        <div
+          class="detail-image-placeholder"
+        >
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                assets/images/architectural-detail-768.webp 768w,
+                assets/images/architectural-detail.webp     1536w
+              "
+              sizes="100vw"
+            />
+            <img
+              src="assets/images/architectural-detail.jpg"
+              alt="Architectural detail study"
+              width="1536"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+              data-parallax-image
+            />
+          </picture>
+        </div>
+
+        <h2 class="detail-title" id="detail-title">
+          Architecture is experienced through details.
+        </h2>
+      </section>
+
+      <section
+        class="philosophy reveal-section"
+        data-nav-section="studio"
+        aria-labelledby="philosophy-title"
+      >
+        <p class="section-label">PHILOSOPHY</p>
+
+        <h2 class="philosophy-title" id="philosophy-title">
+          Architecture should not<br />
+          compete for attention.
+        </h2>
+
+        <p class="philosophy-copy">
+          We believe enduring architecture emerges from clarity, proportion, and
+          thoughtful material selection. Every project is shaped to remain
+          relevant long after trends have disappeared.
+        </p>
+      </section>
+
+      <section
+        class="design-principles reveal-section"
+        data-nav-section="studio"
+        aria-labelledby="principles-title"
+      >
+        <p class="section-label" id="principles-title">DESIGN PRINCIPLES</p>
+
+        <div class="principles-list">
+          <article class="principle-item">
+            <p class="principle-number">01</p>
+            <div>
+              <h2>CLARITY</h2>
+              <p>Every decision must strengthen the space.</p>
+            </div>
+          </article>
+
+          <article class="principle-item">
+            <p class="principle-number">02</p>
+            <div>
+              <h2>MATERIALITY</h2>
+              <p>
+                Materials are chosen for permanence, texture, and honesty.
+              </p>
+            </div>
+          </article>
+
+          <article class="principle-item">
+            <p class="principle-number">03</p>
+            <div>
+              <h2>LONGEVITY</h2>
+              <p>Architecture should remain relevant beyond trends.</p>
+            </div>
+          </article>
+
+          <article class="principle-item">
+            <p class="principle-number">04</p>
+            <div>
+              <h2>CONTEXT</h2>
+              <p>Each project is shaped by its site, light, and surroundings.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="process reveal-section"
+        data-nav-section="studio"
+        aria-labelledby="process-title"
+      >
+        <p class="section-label" id="process-title">PROCESS</p>
+
+        <div class="process-list">
+          <article class="process-stage">
+            <h2><span>01</span> Research</h2>
+            <p>
+              Understanding the site, context, and ambitions behind every
+              project.
+            </p>
+          </article>
+
+          <article class="process-stage">
+            <h2><span>02</span> Concept</h2>
+            <p>Transforming ideas into a clear architectural vision.</p>
+          </article>
+
+          <article class="process-stage">
+            <h2><span>03</span> Development</h2>
+            <p>Refining form, materiality, and technical execution.</p>
+          </article>
+
+          <article class="process-stage">
+            <h2><span>04</span> Realization</h2>
+            <p>Guiding projects from drawings to built reality.</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="services reveal-section"
+        id="services"
+        data-nav-section="services"
+        aria-labelledby="services-title"
+      >
+        <p class="section-label" id="services-title">SERVICES</p>
+
+        <div class="services-list">
+          <article class="service-item">
+            <h2>Residential Architecture</h2>
+            <p>
+              Private residences designed around context, light, and longevity.
+            </p>
+          </article>
+
+          <article class="service-item">
+            <h2>Commercial Architecture</h2>
+            <p>
+              Purpose-driven environments balancing functionality and identity.
+            </p>
+          </article>
+
+          <article class="service-item">
+            <h2>Interior Architecture</h2>
+            <p>Spaces where materiality and experience work together.</p>
+          </article>
+
+          <article class="service-item">
+            <h2>Master Planning</h2>
+            <p>Strategic planning for projects at every scale.</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="recognition reveal-section"
+        data-nav-section="contact"
+        aria-labelledby="recognition-title"
+      >
+        <p class="section-label" id="recognition-title">RECOGNITION</p>
+
+        <div class="recognition-list">
+          <div class="recognition-item">
+            <p class="recognition-number" data-count-to="15" data-count-suffix="+">
+              15+
+            </p>
+            <p>Years of Practice</p>
+          </div>
+
+          <div class="recognition-item">
+            <p class="recognition-number" data-count-to="120" data-count-suffix="+">
+              120+
+            </p>
+            <p>Completed Projects</p>
+          </div>
+
+          <div class="recognition-item">
+            <p class="recognition-number" data-count-to="8">8</p>
+            <p>Design Awards</p>
+          </div>
+
+          <div class="recognition-item">
+            <p class="recognition-number" data-count-to="4">4</p>
+            <p>Countries</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="contact-cta reveal-section"
+        id="contact"
+        data-nav-section="contact"
+        aria-labelledby="contact-title"
+      >
+        <h2 class="contact-title" id="contact-title">
+          Let's Create<br />
+          Something Enduring.
+        </h2>
+
+        <div class="contact-content">
+          <p>
+            Whether residential, commercial, or cultural, every project begins
+            with a conversation.
+          </p>
+          <a class="primary-button" href="mailto:hello@monolitharchitects.com">
+            Start a Conversation
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-nav-section="contact">
+      <div class="footer-main">
+        <a class="footer-brand" href="./" aria-label="Monolith Architects home">
+          MONOLITH ARCHITECTS
+        </a>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#studio">Studio</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer-contact">
+          <p>New York, NY</p>
+          <a href="mailto:hello@monolitharchitects.com">
+            hello@monolitharchitects.com
+          </a>
+        </div>
+      </div>
+
+      <p class="footer-copyright">
+        &copy; 2026 Monolith Architects. All Rights Reserved.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

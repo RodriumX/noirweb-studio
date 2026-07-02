@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Luxury Real Estate, una experiencia digital de propiedades exclusivas creada por NoirWeb Studio."
+    >
+    <meta name="theme-color" content="#0b0b0b">
+
+    <title>Luxury Real Estate | NoirWeb Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <header class="site-header">
+        <div class="container navbar">
+          <a
+            class="brand"
+            href="#home"
+            aria-label="Aureum Estates, inicio"
+            data-reveal="header"
+          >
+            Aureum <span>Estates</span>
+          </a>
+
+          <div class="nav-menu" data-reveal="header">
+            <button
+              class="nav-toggle"
+              type="button"
+              aria-label="Abrir menu de navegacion"
+              aria-controls="primary-navigation"
+              aria-expanded="false"
+            >
+              <span></span>
+              <span></span>
+            </button>
+
+            <nav
+              class="nav-panel"
+              id="primary-navigation"
+              aria-label="Navegacion principal"
+            >
+              <p class="nav-panel__label">Menu</p>
+
+              <ul class="nav-links">
+                <li>
+                  <a href="#home" aria-current="page">
+                    <span>01</span>Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#properties"><span>02</span>Properties</a>
+                </li>
+                <li>
+                  <a href="#about"><span>03</span>About</a>
+                </li>
+                <li>
+                  <a href="#market">
+                    <span>04</span>Market Presence
+                  </a>
+                </li>
+                <li>
+                  <a href="#stories"><span>05</span>Client Stories</a>
+                </li>
+              </ul>
+
+              <a
+                class="button button--small nav-cta"
+                href="#consultation"
+              >
+                <span>Schedule Consultation</span>
+                <span class="button__arrow" aria-hidden="true">&nearr;</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <section class="hero" id="home">
+          <div class="container hero__layout">
+            <div class="hero__content">
+              <p class="eyebrow" data-reveal="hero">
+                Private residences. Exceptional living.
+              </p>
+
+              <h1 data-reveal="hero">
+                Luxury Real Estate Designed Around Your Lifestyle
+              </h1>
+
+              <p class="hero__description" data-reveal="hero">
+                Discover exclusive properties, expert guidance, and a seamless
+                buying experience.
+              </p>
+
+              <div class="hero__actions" data-reveal="hero">
+                <a class="button" href="#properties">View Properties</a>
+                <a class="button button--ghost" href="#consultation">
+                  Schedule Consultation
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="hero__visual"
+              data-reveal="visual"
+            >
+              <div class="hero__visual-frame">
+                <div class="residence-scene">
+                  <img
+                    src="assets/properties/villa-aurelia.jpg"
+                    alt="Villa Aurelia, residencia moderna de lujo con vistas panoramicas"
+                    width="1402"
+                    height="1122"
+                  >
+                </div>
+
+                <div class="residence-meta">
+                  <div>
+                    <span class="residence-meta__eyebrow">
+                      Private Collection
+                    </span>
+                    <strong>Villa Aurelia</strong>
+                  </div>
+                  <span class="residence-meta__index">01 / 04</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="featured-properties">
+          <span
+            class="section-anchor"
+            id="properties"
+            aria-hidden="true"
+          ></span>
+          <div class="container">
+            <header class="featured-properties__header">
+              <div>
+                <p class="section-label">Exclusive Portfolio</p>
+                <h2>Featured Properties</h2>
+              </div>
+
+              <p class="featured-properties__intro">
+                Explore a curated collection of exceptional residences in the
+                most desirable locations.
+              </p>
+            </header>
+
+            <div class="properties-grid">
+              <article class="property-card" id="property-oceanview">
+                <div
+                  class="property-card__visual property-card__visual--ocean"
+                >
+                  <img
+                    src="assets/properties/malibu-penthouse.jpg"
+                    alt="Oceanview Penthouse en Malibu, California"
+                    width="1536"
+                    height="1024"
+                    loading="lazy"
+                  >
+                  <span class="property-card__number">01</span>
+                </div>
+
+                <div class="property-card__content">
+                  <p class="property-card__location">Malibu, California</p>
+                  <h3>Oceanview Penthouse</h3>
+
+                  <div class="property-card__footer">
+                    <strong class="property-card__price">$8.9M</strong>
+                    <a class="property-card__link" href="#property-oceanview">
+                      View Property <span aria-hidden="true">&nearr;</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="property-card" id="property-hillside">
+                <div
+                  class="property-card__visual property-card__visual--hillside"
+                >
+                  <img
+                    src="assets/properties/beverly-hills-estate.jpg"
+                    alt="Modern Hillside Estate en Beverly Hills, California"
+                    width="1536"
+                    height="1024"
+                    loading="lazy"
+                  >
+                  <span class="property-card__number">02</span>
+                </div>
+
+                <div class="property-card__content">
+                  <p class="property-card__location">
+                    Beverly Hills, California
+                  </p>
+                  <h3>Modern Hillside Estate</h3>
+
+                  <div class="property-card__footer">
+                    <strong class="property-card__price">$12.5M</strong>
+                    <a class="property-card__link" href="#property-hillside">
+                      View Property <span aria-hidden="true">&nearr;</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="property-card" id="property-waterfront">
+                <div
+                  class="property-card__visual property-card__visual--waterfront"
+                >
+                  <img
+                    src="assets/properties/waterfront-villa.jpg"
+                    alt="Waterfront Villa en Miami Beach, Florida"
+                    width="1536"
+                    height="1024"
+                    loading="lazy"
+                  >
+                  <span class="property-card__number">03</span>
+                </div>
+
+                <div class="property-card__content">
+                  <p class="property-card__location">Miami Beach, Florida</p>
+                  <h3>Waterfront Villa</h3>
+
+                  <div class="property-card__footer">
+                    <strong class="property-card__price">$15.2M</strong>
+                    <a class="property-card__link" href="#property-waterfront">
+                      View Property <span aria-hidden="true">&nearr;</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-estates">
+          <span class="section-anchor" id="about" aria-hidden="true"></span>
+          <div class="container about-estates__layout">
+            <div class="about-estates__intro">
+              <p class="section-label">About Aureum Estates</p>
+              <h2>Curated Luxury. Trusted Guidance. Exceptional Living.</h2>
+
+              <p class="about-estates__copy">
+                Aureum Estates connects discerning clients with exceptional
+                properties through refined market expertise, personalized
+                service, and a commitment to elevated living.
+              </p>
+            </div>
+
+            <ol class="about-estates__values">
+              <li>
+                <div class="about-estates__value-row">
+                  <span>01</span>
+                  <div class="about-estates__value-content">
+                    <strong>Exclusive Listings</strong>
+                    <p>
+                      Access to exceptional properties not widely available on
+                      the market.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="about-estates__value-row">
+                  <span>02</span>
+                  <div class="about-estates__value-content">
+                    <strong>Private Client Service</strong>
+                    <p>
+                      Personalized guidance tailored to each client&rsquo;s goals and
+                      lifestyle.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="about-estates__value-row">
+                  <span>03</span>
+                  <div class="about-estates__value-content">
+                    <strong>Market Expertise</strong>
+                    <p>
+                      Strategic insight backed by deep knowledge of luxury real
+                      estate markets.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section
+          class="market-presence"
+          aria-labelledby="market-presence-title"
+        >
+          <span class="section-anchor" id="market" aria-hidden="true"></span>
+          <div class="container">
+            <header class="market-presence__header">
+              <p class="section-label">Our Market Presence</p>
+              <h2 id="market-presence-title">
+                Trusted Across the Most Desirable Luxury Markets
+              </h2>
+            </header>
+
+            <dl class="market-presence__grid">
+              <div class="market-stat">
+                <dt data-count="150" data-suffix="+">150+</dt>
+                <dd>Exclusive Transactions</dd>
+              </div>
+              <div class="market-stat">
+                <dt data-count="850" data-prefix="$" data-suffix="M+">
+                  $850M+
+                </dt>
+                <dd>Property Portfolio Value</dd>
+              </div>
+              <div class="market-stat">
+                <dt data-count="25" data-suffix="+">25+</dt>
+                <dd>Luxury Communities Served</dd>
+              </div>
+              <div class="market-stat">
+                <dt data-count="98" data-suffix="%">98%</dt>
+                <dd>Client Satisfaction</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section
+          class="client-stories"
+          aria-labelledby="client-stories-title"
+        >
+          <span class="section-anchor" id="stories" aria-hidden="true"></span>
+
+          <div class="container">
+            <header class="client-stories__header">
+              <p class="section-label">Client Stories</p>
+              <h2 id="client-stories-title">
+                Experiences Defined by Trust, Privacy, and Precision
+              </h2>
+            </header>
+
+            <div class="client-stories__grid">
+              <article class="testimonial-card">
+                <span class="testimonial-card__number">01</span>
+                <blockquote>
+                  &ldquo;Aureum Estates understood exactly what we were looking for
+                  before we could fully describe it.&rdquo;
+                </blockquote>
+                <p>
+                  <strong>Jonathan Reed</strong>
+                  <span>Private Buyer</span>
+                </p>
+              </article>
+
+              <article class="testimonial-card">
+                <span class="testimonial-card__number">02</span>
+                <blockquote>
+                  &ldquo;The experience felt discreet, strategic, and incredibly
+                  refined from the first conversation.&rdquo;
+                </blockquote>
+                <p>
+                  <strong>Claire Bennett</strong>
+                  <span>Property Investor</span>
+                </p>
+              </article>
+
+              <article class="testimonial-card">
+                <span class="testimonial-card__number">03</span>
+                <blockquote>
+                  &ldquo;Every detail was handled with confidence, clarity, and
+                  exceptional taste.&rdquo;
+                </blockquote>
+                <p>
+                  <strong>Marcus Ellington</strong>
+                  <span>Estate Seller</span>
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="private-consultation"
+          aria-labelledby="consultation-title"
+        >
+          <span
+            class="section-anchor"
+            id="consultation"
+            aria-hidden="true"
+          ></span>
+
+          <div class="container private-consultation__inner">
+            <p class="section-label">Private Consultation</p>
+            <h2 id="consultation-title">
+              Schedule a Private Real Estate Consultation
+            </h2>
+            <p class="private-consultation__copy">
+              Receive personalized guidance, exclusive opportunities, and
+              expert insight tailored to your goals.
+            </p>
+
+            <div class="private-consultation__actions">
+              <a class="button" href="mailto:concierge@aureumestates.com">
+                Schedule Consultation
+              </a>
+              <a
+                class="button button--ghost"
+                href="mailto:concierge@aureumestates.com"
+              >
+                Contact Our Team
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="site-footer__grid">
+            <div class="site-footer__brand">
+              <a href="#home">Aureum Estates</a>
+              <p class="site-footer__subtitle">Luxury Real Estate Concept</p>
+              <p class="site-footer__copy">
+                Curated properties, trusted guidance, and exceptional living.
+              </p>
+            </div>
+
+            <nav class="site-footer__column" aria-label="Navegacion del pie">
+              <h2>Navigation</h2>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#market">Market Presence</a></li>
+                <li><a href="#stories">Client Stories</a></li>
+              </ul>
+            </nav>
+
+            <div class="site-footer__column">
+              <h2>Contact</h2>
+              <address>
+                <a href="mailto:hello@aureumestates.com">
+                  hello@aureumestates.com
+                </a>
+                <span>Beverly Hills, California</span>
+              </address>
+            </div>
+          </div>
+
+          <div class="site-footer__bottom">
+            <p>&copy; 2026 Aureum Estates. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
