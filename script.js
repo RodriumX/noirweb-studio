@@ -3,6 +3,72 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const mobileBreakpoint = window.matchMedia("(max-width: 768px)");
 const focusableSelector = "a[href], button:not([disabled])";
+const revealMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const revealGroups = [
+  [".hero-content > .eyebrow", ".hero-content > h1", ".hero-content > p"],
+  ["#services .section-title", "#services .services-grid"],
+  ["#projects .section-title", "#projects .projects-intro", "#projects .case-study"],
+  [".process .process-intro", ".process .process-grid", ".process .expectation-block"],
+  [".about-noirweb .about-intro", ".about-noirweb .about-principles", ".about-noirweb .about-closing"],
+  [
+    "#contact .contact-box > .eyebrow",
+    "#contact .contact-box > h2",
+    "#contact .contact-copy",
+    "#contact .inquiry-form .form-note",
+    "#contact .inquiry-form .form-field",
+    "#contact .contact-note",
+  ],
+];
+const revealItems = revealGroups.flatMap((group) =>
+  group.flatMap((selector, index) =>
+    [...document.querySelectorAll(selector)].map((element) => ({
+      element,
+      delay: index * 50,
+    })),
+  ),
+);
+let revealObserver = null;
+
+function revealAllItems() {
+  revealItems.forEach(({ element }) => {
+    element.classList.add("is-revealed");
+  });
+}
+
+function initializeScrollReveals() {
+  if (!revealItems.length) {
+    return;
+  }
+
+  revealItems.forEach(({ element, delay }) => {
+    element.classList.add("reveal-item");
+    element.style.setProperty("--reveal-delay", `${delay}ms`);
+  });
+
+  if (revealMotionQuery.matches || !("IntersectionObserver" in window)) {
+    revealAllItems();
+    return;
+  }
+
+  revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18,
+      rootMargin: "0px 0px -12% 0px",
+    },
+  );
+
+  revealItems.forEach(({ element }) => {
+    revealObserver.observe(element);
+  });
+}
 
 function closeMenu({ restoreFocus = false } = {}) {
   navbar.classList.remove("is-open");
@@ -80,5 +146,14 @@ document.addEventListener("keydown", (event) => {
 mobileBreakpoint.addEventListener("change", (event) => {
   if (!event.matches) {
     closeMenu();
+  }
+});
+
+initializeScrollReveals();
+
+revealMotionQuery.addEventListener("change", (event) => {
+  if (event.matches) {
+    revealObserver?.disconnect();
+    revealAllItems();
   }
 });
