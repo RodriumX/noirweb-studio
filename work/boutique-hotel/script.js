@@ -13,7 +13,7 @@ const locationSection = document.querySelector("#location");
 const observedSections = document.querySelectorAll(
   "#hero, #house, #rooms, #experiences, #gallery, #location, #reserve"
 );
-const defaultLocationImage = "assets/location-countryside.jpg";
+const defaultLocationImage = "assets/location-countryside-1536.webp";
 const defaultLocationPosition = "50% center";
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"

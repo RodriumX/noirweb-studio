@@ -54,20 +54,19 @@ body::after {
   background:
     radial-gradient(circle at 72% 18%, rgba(216,199,170,0.055), transparent 28%),
     radial-gradient(circle at 18% 72%, rgba(216,199,170,0.035), transparent 32%);
-  opacity: 0.72;
-  mix-blend-mode: screen;
+  opacity: 0.48;
   z-index: 0;
   animation: ambient-drift 18s var(--ease-noir) infinite alternate;
 }
 
 @keyframes ambient-drift {
   from {
-    opacity: 0.58;
+    opacity: 0.42;
     transform: translate3d(0, 0, 0);
   }
 
   to {
-    opacity: 0.78;
+    opacity: 0.52;
     transform: translate3d(-1.5%, 1%, 0);
   }
 }
@@ -140,12 +139,14 @@ body::after {
   text-decoration: none;
   font-size: 14px;
   opacity: 0.8;
-  transition: all 0.3s ease;
+  transition:
+    color var(--motion-base) var(--ease-noir),
+    opacity var(--motion-base) var(--ease-noir);
 }
 
 .nav-links a:hover {
   opacity: 1;
-  text-shadow: 0 0 18px rgba(255,255,255,0.5);
+  color: #d8c7aa;
 }
 
 .nav-index,
@@ -328,13 +329,6 @@ h1 {
     filter var(--motion-slow) var(--ease-noir);
 }
 
-.hero-visual img:hover {
-  transform: rotate(0deg) scale(1.015);
-  box-shadow:
-    0 44px 128px rgba(0,0,0,0.92),
-    0 0 84px rgba(255,255,255,0.07);
-}
-
 @keyframes cinematic-presence {
   from {
     transform: translateY(0) rotate(-0.35deg);
@@ -422,7 +416,7 @@ h1 {
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-6px);
   border: 1px solid rgba(255,255,255,0.14);
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
@@ -1601,10 +1595,6 @@ h1 {
   .hero-visual img {
     animation: none;
     transition: none;
-  }
-
-  .hero-visual img:hover {
-    transform: none;
   }
 
   .service-card {

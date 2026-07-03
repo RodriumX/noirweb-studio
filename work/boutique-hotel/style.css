@@ -206,17 +206,17 @@ p {
 }
 
 .slide-manor {
-  background-image: url("assets/images/hero-manor.jpg");
+  background-image: url("assets/images/hero-manor-1536.webp");
   background-position: 68% center;
 }
 
 .slide-library {
-  background-image: url("assets/images/hero-library.jpg");
+  background-image: url("assets/images/hero-library-1536.webp");
   background-position: 56% center;
 }
 
 .slide-suite {
-  background-image: url("assets/images/hero-suite.jpg");
+  background-image: url("assets/images/hero-suite-1536.webp");
   background-position: 48% center;
 }
 
@@ -808,7 +808,7 @@ blockquote {
 }
 
 .reservation-cta::before {
-  background-image: url("assets/images/cta-estate.jpg");
+  background-image: url("assets/images/cta-estate-1535.webp");
   background-position: center 48%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -829,6 +829,42 @@ blockquote {
       rgba(27, 27, 27, 0.18) 56%,
       rgba(27, 27, 27, 0.34) 100%
     );
+}
+
+@media (max-width: 1200px) {
+  .slide-manor {
+    background-image: url("assets/images/hero-manor-1280.webp");
+  }
+
+  .slide-library {
+    background-image: url("assets/images/hero-library-1280.webp");
+  }
+
+  .slide-suite {
+    background-image: url("assets/images/hero-suite-1280.webp");
+  }
+
+  .reservation-cta::before {
+    background-image: url("assets/images/cta-estate-1280.webp");
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-manor {
+    background-image: url("assets/images/hero-manor-768.webp");
+  }
+
+  .slide-library {
+    background-image: url("assets/images/hero-library-768.webp");
+  }
+
+  .slide-suite {
+    background-image: url("assets/images/hero-suite-768.webp");
+  }
+
+  .reservation-cta::before {
+    background-image: url("assets/images/cta-estate-768.webp");
+  }
 }
 
 .reservation-content {
