@@ -505,9 +505,7 @@
       </p>
     </div>
 
-    <form class="inquiry-form" name="noirweb-inquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="noirweb-inquiry">
-
+    <form class="inquiry-form" name="noirweb-inquiry" method="POST" action="/api/inquiry" data-inquiry-form>
       <p class="form-honeypot">
         <label>
           Do not fill this out if you're human:
@@ -573,6 +571,7 @@
       </div>
 
       <button class="primary-btn form-submit" type="submit">Submit Inquiry</button>
+      <p class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
     </form>
 
     <div class="contact-note">
