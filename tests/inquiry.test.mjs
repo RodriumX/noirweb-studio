@@ -132,6 +132,7 @@ test("sends every form value to the configured business email", async () => {
 
     assert.equal(response.status, 200);
     assert.equal(outboundRequest.url, "https://api.resend.com/emails");
+    assert.ok(outboundRequest.options.signal instanceof AbortSignal);
     assert.deepEqual(email.to, ["noirwebstudio@gmail.com"]);
     assert.equal(email.reply_to, validSubmission.email);
     assert.match(email.text, /Ada Lovelace/);
