@@ -68,6 +68,26 @@ const escapeHtml = (value) =>
       })[character],
   );
 
+async function fetchWithTimeout(url, options, timeoutMs = 10_000) {
+  const controller = new AbortController();
+  let timeoutId;
+  const timeout = new Promise((_, reject) => {
+    timeoutId = setTimeout(() => {
+      controller.abort();
+      reject(new Error("Email provider timed out."));
+    }, timeoutMs);
+  });
+
+  try {
+    return await Promise.race([
+      fetch(url, { ...options, signal: controller.signal }),
+      timeout,
+    ]);
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 function validateSubmission(payload) {
   const submission = {
     full_name: clean(payload.full_name, 120),
@@ -150,9 +170,8 @@ export default async (request) => {
   let emailResponse;
 
   try {
-    emailResponse = await fetch("https://api.resend.com/emails", {
+    emailResponse = await fetchWithTimeout("https://api.resend.com/emails", {
       method: "POST",
-      signal: AbortSignal.timeout(10_000),
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
