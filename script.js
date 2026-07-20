@@ -4,6 +4,7 @@ const navLinks = document.querySelector(".nav-links");
 const mobileBreakpoint = window.matchMedia("(max-width: 768px)");
 const focusableSelector = "a[href], button:not([disabled])";
 const revealMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const inquiryForm = document.querySelector("[data-inquiry-form]");
 const revealGroups = [
   [".hero-content > .eyebrow", ".hero-content > h1", ".hero-content > p"],
   ["#services .section-title", "#services .services-grid"],
@@ -157,3 +158,64 @@ revealMotionQuery.addEventListener("change", (event) => {
     revealAllItems();
   }
 });
+
+if (inquiryForm) {
+  const submitButton = inquiryForm.querySelector("[type='submit']");
+  const formStatus = inquiryForm.querySelector(".form-status");
+  const defaultButtonLabel = submitButton.textContent;
+  let isSubmitting = false;
+
+  const setFormStatus = (state, message) => {
+    formStatus.className = `form-status${state ? ` is-${state}` : ""}`;
+    formStatus.textContent = message;
+  };
+
+  inquiryForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (isSubmitting || !inquiryForm.reportValidity()) {
+      return;
+    }
+
+    isSubmitting = true;
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending Inquiry…";
+    inquiryForm.setAttribute("aria-busy", "true");
+    setFormStatus("loading", "Sending your inquiry securely…");
+
+    const formData = new FormData(inquiryForm);
+    const payload = Object.fromEntries(formData.entries());
+    const inquiryId = crypto.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
+
+    try {
+      const response = await fetch(inquiryForm.action, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Idempotency-Key": inquiryId,
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Inquiry request failed");
+      }
+
+      inquiryForm.reset();
+      setFormStatus(
+        "success",
+        "Thank you — your inquiry has been sent. We'll be in touch soon.",
+      );
+    } catch {
+      setFormStatus(
+        "error",
+        "We couldn't send your inquiry right now. Please try again or email noirwebstudio@gmail.com.",
+      );
+    } finally {
+      isSubmitting = false;
+      submitButton.disabled = false;
+      submitButton.textContent = defaultButtonLabel;
+      inquiryForm.removeAttribute("aria-busy");
+    }
+  });
+}

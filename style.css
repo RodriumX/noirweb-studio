@@ -940,7 +940,8 @@ h1 {
 
 .form-field-wide,
 .form-submit,
-.form-note {
+.form-note,
+.form-status {
   grid-column: 1 / -1;
 }
 
@@ -1021,6 +1022,33 @@ h1 {
   justify-self: center;
   border: 0;
   cursor: pointer;
+}
+
+.form-submit:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.form-status {
+  min-height: 24px;
+  margin: -8px 0 0;
+  color: #a7a7a7;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.form-status:empty {
+  min-height: 0;
+  margin: 0;
+}
+
+.form-status.is-success {
+  color: #d8c7aa;
+}
+
+.form-status.is-error {
+  color: #efb3aa;
 }
 
 .contact-note {
